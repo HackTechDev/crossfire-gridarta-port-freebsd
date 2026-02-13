@@ -1,27 +1,4 @@
-To run Gridarta (Crossfire editor):
-
-1) Create the following script, for example:
-   /usr/local/bin/gridarta-crossfire-custom
-
-------------------------------------------------------------
-#!/bin/sh
-set -eu
-
-JAVA=/usr/local/openjdk8/bin/java
-BASEDIR=/usr/local/share/java/gridarta
-
-# Build a classpath with all .jar files (excluding *-sources.jar)
-CP=$(/usr/bin/find "${BASEDIR}" -type f -name '*.jar' ! -name '*-sources.jar' -print | /usr/bin/paste -sd: -)
-
-exec "${JAVA}" -cp "${CP}" net.sf.gridarta.var.crossfire.maincontrol.CrossfireEditor
-------------------------------------------------------------
-
-2) Make it executable:
-
-   chmod +x /usr/local/bin/gridarta-crossfire-custom
-
-3) Run it from the Crossfire maps directory:
+To use Gridarta with Crossfire maps:
 
    cd /usr/local/share/crossfire
-   ./gridarta-crossfire-custom
-
+   gridarta-crossfire

@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+JAVA=/usr/local/openjdk8/bin/java
+BASEDIR=/usr/local/share/java/gridarta
+
+CP=$(/usr/bin/find "${BASEDIR}" -type f -name '*.jar' ! -name '*-sources.jar' -print | /usr/bin/paste -sd: -)
+
+exec "${JAVA}" -cp "${CP}" net.sf.gridarta.var.crossfire.maincontrol.DaimoninEditor "$@"

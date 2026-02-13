@@ -29,8 +29,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 GRADLE_USER_HOME=	${WRKDIR}/gradle-home
 MAKE_ENV+=	GRADLE_USER_HOME=${GRADLE_USER_HOME}
 
-SUB_FILES=	gridarta-atrinik gridarta-crossfire gridarta-daimonin
-
 do-fetch:
 	@${MKDIR} ${DISTDIR}
 	@if [ -f ${DISTDIR}/${DISTFILES} ]; then \
@@ -73,8 +71,8 @@ do-install:
 		${CPIO} -pdmuv ${STAGEDIR}${REPODIR}
 
 	# Wrappers
-	${INSTALL_SCRIPT} ${WRKDIR}/gridarta-atrinik  ${STAGEDIR}${PREFIX}/bin/gridarta-atrinik
-	${INSTALL_SCRIPT} ${WRKDIR}/gridarta-crossfire ${STAGEDIR}${PREFIX}/bin/gridarta-crossfire
-	${INSTALL_SCRIPT} ${WRKDIR}/gridarta-daimonin ${STAGEDIR}${PREFIX}/bin/gridarta-daimonin
+	${INSTALL_SCRIPT} ${FILESDIR}/gridarta-atrinik ${STAGEDIR}${PREFIX}/bin/gridarta-atrinik
+	${INSTALL_SCRIPT} ${FILESDIR}/gridarta-crossfire ${STAGEDIR}${PREFIX}/bin/gridarta-crossfire
+	${INSTALL_SCRIPT} ${FILESDIR}/gridarta-daimonin ${STAGEDIR}${PREFIX}/bin/gridarta-daimonin
 
 .include <bsd.port.mk>
