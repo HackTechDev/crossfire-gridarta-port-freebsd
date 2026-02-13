@@ -1,0 +1,15 @@
+#!/bin/sh
+JAVA="%%LOCALBASE%%/bin/java"
+JARDIR="%%JAVASHAREDIR%%/gridarta"
+
+CP=""
+for j in "${BASEDIR}"/*.jar; do
+  [ -f "$j" ] && CP="${CP:+$CP:}$j"
+done
+
+# jars du repo embarqué
+for j in $(/usr/bin/find "${BASEDIR}/repo" -type f -name '*.jar' ! -name '*-sources.jar'); do
+  CP="${CP}:$j"
+done
+
+exec ${JAVA} -cp "$CP" net.sf.gridarta.var.crossfire.maincontrol.CrossfireEditor "$@"

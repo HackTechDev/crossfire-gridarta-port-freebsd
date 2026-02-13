@@ -1,0 +1,3 @@
+Gridarta is a Java-based map editor for several RPG servers and projects,
+including Atrinik, Crossfire and Daimonin. It provides dedicated editor
+frontends and shared libraries for map/resources/project handling.

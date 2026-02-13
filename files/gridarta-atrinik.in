@@ -1,0 +1,5 @@
+#!/bin/sh
+JAVA="%%LOCALBASE%%/bin/java"
+JARDIR="%%JAVASHAREDIR%%/gridarta"
+
+exec ${JAVA} -cp "${JARDIR}/*" et.sf.gridarta.var.crossfire.maincontrol.AtrinikEditor "$@"
